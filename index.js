@@ -1,187 +1,192 @@
-//15
-  console.log("-------------------15------------------")  
+// 1
+const frutas = ["manzana", "pera", "uva", "mango", "sandía"];
 
-let a = '*'
-
-let i = 1 
-
-while(i <= 9) {
-   if(i%2!=0){
-  console.log(a.repeat(i))  
-  }
-  i++   
-
-}
+console.log(frutas.length);                       
+console.log(frutas[0], frutas.at(-1));             
+console.log(frutas.includes("uva"));              
+frutas.push("kiwi");                              
+frutas.splice(frutas.indexOf("pera"), 1);         
+console.log(frutas);
 
 
-let x = 7 
+// 2
+const nombres = ["  ANA", "luis  ", " MaRía ", "cArLos"];
 
-while(x >= 1) {
-   if(x%2!=0){
-  console.log(a.repeat(x))  
-  }
-  x--   
-  
-}
+const nombresLimpios = nombres.map(n => {
+  const s = n.trim().toLowerCase();
+  return s[0].toUpperCase() + s.slice(1);
+});
 
-//14
-  console.log("-------------------14------------------")  
+console.log(nombresLimpios);  
 
-let x2 = 9  
+// 3
+const mensajes = [
+  "Necesito pizza urgente",
+  "La clave está en el bosque",
+  "Javascript es divertido",
+  "Hoy toca estudiar arrays"
+];
 
-while(x2 >= 1) {
-   if(x2%2!=0){
-  console.log(a.repeat(x2))  
-  }
-  x2--  
-  
-}
+const palabrasClave = ["pizza", "bosque", "divertido", "arrays"];
 
+const secretas = mensajes.map((msg, i) =>
+  msg.split(" ").find(p => p.toLowerCase() === palabrasClave[i])
+);
 
-//13
-  console.log("-------------------13------------------")  
-
-let x3 = 1  
+console.log(secretas);  
 
 
-while(x3 <= 9) {
-   if(x3%2!=0) 
-  console.log(a.repeat(x3))  
-  
-  x3++   
+// 4
+const comentarios = [
+  "Qué buen producto",
+  "Esto es spam total",
+  "Me encantó la atención",
+  "Oferta falsa, suena spam",
+  "Muy recomendado"
+];
 
-  
-}
+const sospechosos = comentarios.filter(c => c.includes("spam"));
 
-
-
-//12
-  console.log("-------------------12------------------")  
-
-let x4 = 5  
+console.log(sospechosos);        // ["Esto es spam total", "Oferta falsa, suena spam"]
+console.log(sospechosos.length); // 2
 
 
-while(x4 <= 5 && x4 >= 1) {
-  console.log(a.repeat(x4))  
-  
-  x4-- 
-  
-}
+// 5
+const titulos = [
+  "Curso de javascript basico",
+  "aprende javascript desde cero",
+  "javascript para principiantes"
+];
+
+const titulosCorregidos = titulos.map(t => t.replaceAll("javascript", "JavaScript"));
+
+console.log(titulosCorregidos);
 
 
-//11
-  console.log("-------------------11------------------")  
+// 6
+const puntajes = [85, 120, 99, 140, 70, 110];
 
-let x5 = 1  
+const puntajesCopia = [...puntajes];
+const top3 = puntajes.sort((a, b) => b - a).slice(0, 3);
 
-
-while(x5 <= 5 && x5 >= 1) {
-  console.log(a.repeat(x5))  
-  
-  x5++ 
-  
-}
+console.log(top3);          
+console.log(puntajesCopia); 
 
 
-//10
-  console.log("-------------------10------------------")  
+// 7
+const mochila = ["linterna", "cuerda", "agua", "mapa"];
 
-let x6 = 6;
-let i6 = 1;       
-let y6 = 0;       
+const [primero, segundo, ...resto] = mochila;
 
-for (i6; i6 <= x6; i6++) {  
-  y6 = y6 + x6 * i6;       
-}
+console.log("Primer objeto:", primero);  
+console.log("Segundo objeto:", segundo); 
+console.log("Resto:", resto);           
 
-console.log(y6);
-
-
-//9
-console.log("-------------------9------------------")
-
-// let contraseña;
-// const contra = "java123";
-
-// do {
-//   contraseña = prompt("¿Cuál es tu contraseña?");
-//   console.log("escribiste:", contraseña);  
-// } while (contraseña !== contra);
-
-// console.log("Contraseña correcta ");
 
 //8
-console.log("-------------------8------------------")
+const invitados = ["Lucía", "Pedro", "Marta", "Juan", "Elena"];
 
-let x8 = "1234";  
+console.log(invitados.includes("Marta"));
+invitados.unshift("Sofía");              
+invitados.pop();                        
+invitados.sort();
 
-let a8 = 0;
-
-for (const digit of x8) {
-  a8 = a8 + Number(digit); 
-}
-
-console.log(a8); // 10
+console.log(invitados); // ["Juan", "Lucía", "Marta", "Pedro", "Sofía"]
 
 
+// 9
+const frases = ["hola humano", "sistema activado", "modo prueba", "bateria cargada"];
 
-// # Ejercicio 1
-// for (let i = 1; i <= 10; i++) {
-//   console.log(`Valor de i: ${i}`);
-// }
+const robot = frases.map(f => f.toUpperCase());
+const unidas = robot.join(" | ");
 
-// # Ejercicio 2
+console.log(robot);
+console.log(unidas); 
 
-// let i = 10;
 
-// while (i > 0) {
-//   console.log(`valor de i: ${i}`);
+// 10
+const productos = ["Laptop", "Mouse", "Teclado", "Monitor", "Audífonos"];
 
-//   i = i - 1;
-// }
+console.log(productos.includes("Mouse"));           
+console.log(productos.indexOf("Monitor"));          
+productos[productos.indexOf("Teclado")] = "Teclado mecánico";
+productos.splice(productos.indexOf("Audífonos"), 1);
 
-// # Ejercicio 3
+console.log(productos);
 
-// const userNumber = prompt("Ingrese un numero: ");
 
-// for (let i = 1; i <= 12; i++) {
-//   console.log(`${userNumber} x ${i} = ${userNumber * i}`);
-// }
+// 11
+const correos = ["  ANA@GMAIL.COM ", "luis@hotmail.com  ", " MARIA@OUTLOOK.COM"];
 
-// # Ejercicio 4
+const correosLimpios = correos.map(c => c.trim().toLowerCase());
+const gmail = correosLimpios.filter(c => c.endsWith("gmail.com"));
 
-// let suma = 0;
+console.log(correosLimpios); 
+console.log(gmail);          
 
-// for (let i = 1; i <= 100; i++) {
-//   suma = suma + i;
-// }
 
-// console.log(suma);
+// 12
+const peliculas = ["Avatar", "Titanic", "Interestelar", "Amélie", "Gladiador"];
 
-// # Ejercicio 5
+const alfabetico = [...peliculas].sort();
+const alReves    = [...alfabetico].reverse();
+const conA       = peliculas.filter(p => p.toLowerCase().includes("a"));
 
-// for (let i = 1; i <= 50; i++) {
-//   if (i % 2 === 0) {
-//     console.log(i);
-//   }
-// }
+console.log(alfabetico); 
+console.log(alReves);
+console.log(conA);
 
-// # Ejercicio 6
 
-// for (let i = 1; i <= 50; i++) {
-//   if (i % 2 !== 0) {
-//     console.log(i);
-//   }
-// }
+// 13
+const menu = ["Pizza", "Hamburguesa", "Ensalada"];
 
-// # Ejercicio 7
+menu.push("Pasta");    
+menu.unshift("Sopa");  
+menu.splice(1, 1);      
 
-let number = 1234;
-let counter = 4;
+const [ultimo, ...anteriores] = [...menu].reverse();
+const frase = `Hoy tenemos: ${anteriores.reverse().join(", ")} y ${ultimo}`;
 
-while (number > 0) {
-  number = Math.floor(number / 10);
-  counter++;
-}
+console.log(menu);
+console.log(frase);
 
-console.log(`Digits: ${counter}`);
+
+// 14
+const series = ["Dark", "Breaking Bad", "Stranger Things", "You", "Lost"];
+
+const longitudes = series.map(s => s.length);
+const minusculas = series.map(s => s.toLowerCase());
+const mas4letras = series.filter(s => s.length > 4);
+
+console.log(longitudes); 
+console.log(minusculas);
+console.log(mas4letras);
+
+
+// 15
+const caja = ["gema", "moneda", "llave", "poción", "mapa"];
+
+const [gem, mon, ...restantes] = caja;
+
+console.log(restantes.includes("llave")); // true
+
+restantes[restantes.indexOf("poción")] = "poción mágica";
+
+const cajaFinal = restantes.sort();
+console.log(cajaFinal); 
+
+
+// 16
+const personajes = ["  harry", "HERMIONE ", " ron ", "draco", " luna lovegood "];
+
+const magicos = personajes
+  .map(n => {
+    const s = n.trim().toLowerCase();
+    return s[0].toUpperCase() + s.slice(1);
+  })
+  .sort()
+  .filter(n => n.toLowerCase().includes("o"))
+  .map(n => n === "Draco" ? "Draco Malfoy" : n);
+
+console.log(magicos); 
+
